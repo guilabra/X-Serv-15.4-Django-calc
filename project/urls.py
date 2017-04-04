@@ -1,16 +1,16 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.contrib import admin
-#from calc import views
+from calc import views
 
-urlpatterns = patterns('',
+urlpatterns = [
     # Examples:
     # url(r'^$', 'project.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^(\d+)\+(\d+)', 'calc.views.suma'),
-    url(r'^(\d+)\-(\d+)', 'calc.views.resta'),
-    url(r'^(\d+)\*(\d+)', 'calc.views.multiplica'),
-    url(r'^(\d+)\/(\d+)', 'calc.views.divide')
+    #url(r'^admin/', include(admin.site.urls)),
+    url(r'^(\d+)\+(\d+)', views.suma),
+    url(r'^(\d+)\-(\d+)', views.resta),
+    url(r'^(\d+)\*(\d+)', views.multiplica),
+    url(r'^(\d+)\/(\d+)', views.divide)
 
-)
+]
